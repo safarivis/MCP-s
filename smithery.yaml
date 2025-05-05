@@ -1,0 +1,14 @@
+# Smithery.ai configuration
+startCommand:
+  type: stdio
+  configSchema: {}
+  commandFunction: |-
+    (config) => ({
+      "command": "python",
+      "args": [
+        "aitable_mcp_server.py"
+      ],
+      "env": {
+        "AITABLE_API_KEY": process.env.AITABLE_API_KEY || ""
+      }
+    })
